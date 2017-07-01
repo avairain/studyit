@@ -2,14 +2,21 @@
 define([
     'jquery',
     'template',
+    'nprogress',
     'cookie'
-], function ($, template) {
+], function ($, template,NProgress) {
     //用户没有登录的时候就转跳登录界面
     if(!$.cookie('PHPSESSID')){
         if(location.pathname !='/dashboard/login'){
             location.href='/dashboard/login';
         }
     }
+    $( document ).ajaxSend(function(){
+        NProgress.start();
+    })
+    $( document ).ajaxSuccess(function(){
+        NProgress.done();
+    })
 //页面加载侧边栏的用户信息
     $(function () {
     	if('/dashboard/login'!=location.pathname){

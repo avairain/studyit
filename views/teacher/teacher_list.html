@@ -112,7 +112,7 @@
                                 <th>出生日期:</th><td colspan="3">2015-11-13</td>
                             </tr>
                             <tr>
-                                <th>性别:</th><td>男</td>
+                                <th>性别:</th><td>{{if tc_gender===1}}男{{else}}女{{/if}}</td>
                                 <th>出生日期:</th><td colspan="3">{{tc_birthday}}</td>
                             </tr>
                             <tr>
@@ -120,7 +120,8 @@
                                 <th>邮箱:</th><td colspan="2">{{tc_email}}</td>
                             </tr>
                             <tr>
-                                <th>籍贯:</th><td colspan="6">{{tc_hometown}}</td>
+                                <!--<th>籍贯:</th><td colspan="6">{{tc_hometown.split("|").join(" ")}}</td> -->
+                                <th>籍贯:</th><td colspan="6">{{tc_hometown.replace(/\|/g, " ")}}</td>
                             </tr>
                             <tr>
                                 <td colspan="7">

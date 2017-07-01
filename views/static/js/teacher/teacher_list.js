@@ -15,9 +15,11 @@ define(['jquery','template','bootstrap'],function($,template){
 	$('#teacherlist').on('click','.teachermodeshow',function(){
 		var id=$(this).parent().parent().data('tc_id');
 		$.ajax({
-			url:'/api/teacher/view?tc_id='+id,
+			url:'/api/teacher/view',
 			type:'get',
+			data:{tc_id:id},
 			success:function(data){
+				console.log(data.result);
 				var html=template('teacher-modal',data.result);
 				$('#teacherModal').html(html);
 				$('#teacherModal').modal('show');
