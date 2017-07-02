@@ -72,7 +72,7 @@
             <td>{{if v.tc_gender==1}}男{{else}}女{{/if}}</td>
             <td>{{v.tc_cellphone}}</td>
             <td>
-                <a href="javascript:void(0);" data-toggle="modal" class="btn btn-info btn-xs teachermodeshow" >查 看</a>
+                <a href="javascript:void(0);" class="btn btn-info btn-xs teachermodeshow" >查 看</a>
                 <a href="/teacher/teacher_add?tc_id={{v.tc_id}}" class="btn btn-info btn-xs teachereditoradd">编 辑</a>
                 {{if v.tc_status==1}}
                 <a href="javascript:;" class="btn btn-success btn-xs teacheronoff" data-tc_status="{{v.tc_status}}">启 用</a>
