@@ -31,26 +31,29 @@
     <script type='text/template' id='teacheraddinfo'>
         <input type="hidden" name='tc_id' value="{{tc_id}}">
         <div class="form-group">
-            <label for="" class="col-xs-3 control-label" >姓名</label>
+            <label for="" class="col-xs-3 control-label"  >姓名</label>
             <div class="col-xs-4">
-                <input type="text" class="form-control input-sm" name='tc_name'  placeholder="讲师名称" value="{{tc_name}}">
+                <input type="text" class="form-control input-sm" name='tc_name' data-required data-description='user' data-describedby='msuser' placeholder="讲师名称" id='teachername' value="{{tc_name}}">
             </div>
+            <label id='msuser' class="control-label"></label>
         </div>
         <div class="form-group" id="teacheraddpassword">
             <label for="" class="col-xs-3 control-label">密码</label>
             <div class="col-xs-4">
-                <input type="password" name='tc_pass' class="form-control input-sm">
+                <input type="password" name='tc_pass' data-trim  data-required  data-description='password' data-describedby='mspass' class="form-control input-sm">
             </div>
+            <label class="control-label " id='mspass'></label>
         </div>
         <div class="form-group" >
             <label for="" class="col-xs-3 control-label">入职时间</label>
             <div class="col-xs-4">
-                <input type="text" name='tc_join_date' value="{{tc_join_date}}" class="form-control input-sm">
+                <input type="text" name='tc_join_date' id="teacherjoin" data-required  data-description='join' data-describedby='msjoin' value="{{tc_join_date}}" class="form-control input-sm">
             </div>
+            <label id="msjoin" class="control-label"></label>
         </div>
         <div class="form-group">
             <label for="" class="col-xs-3 control-label">类型</label>
-            <div class="col-xs-2">
+            <div class="col-xs-4">
                 <select name="tc_type" class="form-control input-sm">
                     <option value="1">讲师</option>
                     <option value="0">管理员</option>
@@ -64,13 +67,13 @@
                     <input type="radio" name='tc_gender' value='1' {{if tc_gender==1 }}checked{{else}}{{/if}}> 男
                 </label>
                 <label class="radio-inline">
-                    <input type="radio"name='tc_gender' value='0' {{if tc_gender==0 }}checked{{else}}{{/if}}> 女
+                    <input type="radio" name='tc_gender' value='0' {{if tc_gender==0 }}checked{{else}}{{/if}}> 女
                 </label>
             </div>
         </div>
         <div class="form-group">
             <div class="col-xs-7">
-                <a href="/teacher/teacher_list" class="btn btn-success btn-sm pull-right" id='teacheraddsubmit'>{{tc_text}} </a>
+                <button class="btn btn-success btn-sm pull-right" id='teacheraddsubmit' data-type="{{tc_type}}" >{{tc_text}} </button>
             </div>                          
         </div>
     </script>
