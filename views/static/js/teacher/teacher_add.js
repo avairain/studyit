@@ -19,7 +19,8 @@
 					var html =template('teacheraddinfo',data.result);
 					$('.teacher-add>form').html(html);
 					//因为表单校验不为空  而密码栏（有name属性）不显示但是为空所有不能触发表单项都通过后的事件（valid）
-					$('#teacheraddpassword').html('').hide();
+					$('#teacheraddpassword').hide().find('input').removeAttr('data-required');
+												//removeData无法删除
 					//时间插件
 					$("input[name='tc_join_date']").datepicker({
 						format:'yyyy-mm-dd'
