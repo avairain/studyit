@@ -1,4 +1,4 @@
-define(['jquery', 'ckeditor', 'template', 'region', 'form', 'bootstrap-datepicker', 'bootstrap-datepicker.zh', 'uploadify'], function ($, ckeditor, template) {
+define(['jquery', 'ckeditor', 'template', 'region', 'form', 'bootstrap-datepicker', 'bootstrap-datepicker.zh', 'uploadify'], function ($, CKEDITOR, template) {
 
     $.ajax({
         url: '/api/teacher/profile',
