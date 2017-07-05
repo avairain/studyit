@@ -33,7 +33,9 @@
     <script type='text/template' id='add-step-tpl'>
         <div class="brief">
             <div class="thumb">
-                <img src="./uploads/course.png" alt="">
+                {{if cs_cover==""}}<img src="/views/static/uploads/course.png" alt="">
+                {{else}}<img src="{{cs_cover}}" alt="">
+                {{/if}}
             </div>
             <dl class="info">
                 <dt>{{cs_name}}</dt>
@@ -43,19 +45,19 @@
         <!-- 步聚 -->
         <ul class="forwards list-unstyled">
             <li>
-                <a href="./course_add_step1.html" class="active">
+                <a href="/course/course_add_step1?cs_id={{cs_id}}" class="active">
                             <b>1</b>
                             基本信息
                             </a>
             </li>
             <li>
-                <a href="./course_add_step2.html">
+                <a href="/course/course_add_step2?cs_id={{cs_id}}">
                             <b>2</b>
                             课程图片
                             </a>
             </li>
             <li>
-                <a href="./course_add_step3.html">
+                <a href="/course/course_add_step3?cs_id={{cs_id}}">
                             <b>3</b>
                             课时管理
                             </a>
@@ -68,7 +70,7 @@
                 <h5>基本信息 <small>BASIC INFORMATION</small></h5>
             </div>
             <form action="" class="basic form-horizontal">
-                <input type="hidden" name='cs_id' value={{cs_id}}>
+                <input type="hidden" name='cs_id' value="{{cs_id}}">
                 <div class="form-group">
                     <label for="" class="col-xs-2 control-label">标题</label>
                     <div class="col-xs-8">
