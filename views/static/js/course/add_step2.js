@@ -77,7 +77,7 @@ define(['jquery', 'util', "template", 'uploadify', 'jcrop'], function ($, util, 
 				success: function(data){
 					if(data.code == 200){
 						// $that.prop("disabled", false);
-						location.href = "/course/course_add_step3?id=" + data.result.cs_id;
+						location.href = "/course/course_add_step3?cs_id=" + data.result.cs_id;
 					}
 				}
 			})
